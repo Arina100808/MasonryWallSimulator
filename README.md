@@ -70,10 +70,32 @@ If you encounter an error like `ModuleNotFoundError: No module named 'tkinter'`,
   sudo apt-get install python3-tk
   ```
 - On macOS:
-  ```bash
-  brew install python-tk
-  ```
-
+  - Install python-tk:
+    ```bash
+    brew install python-tk
+    ```
+  - Install the tk library:
+    ```bash
+    brew install tcl-tk
+    ```
+  - If you are using pyenv (check with `which python`):
+    - Check which Python versions you have installed with pyenv:
+      ```bash
+      pyenv versions
+      ```
+    - Reinstall Python with environment variables telling it where to find Tcl/Tk:
+      ```bash
+      env \
+      LDFLAGS="-L$(brew --prefix tcl-tk)/lib" \
+      CPPFLAGS="-I$(brew --prefix tcl-tk)/include" \
+      PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
+      pyenv install <your-python-version>
+      ```
+    - Set the new Python as your local or global version:
+      ```bash
+      pyenv global <your-python-version>
+      ```
+  
 Finally, verify Tkinter is working:
 ```bash
 python3 -m tkinter
