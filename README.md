@@ -129,12 +129,12 @@ The largest shape possible is a triangle ⇒ the goal is to maximize the number 
 
 ## Possible Future Work
 
-- Adaptation for other bond types.
+- Improve adaptation for other bond types.
 - Implement stride merging logic, especially near the wall top.
 - Optimize data storage using dictionaries or spatial indices.
-- Improve the row generation algorithm for wild bond patterns to handle conflicts of restrictions more efficiently.
+- Enhance the row generation algorithm for wild bond patterns to better resolve conflicts arising from multiple consecutive brick placement restrictions.
 - Explore _reinforcement learning_ approaches for generating optimal build sequences.
-
+q
 ---
 
 ## Algorithm Visualization
