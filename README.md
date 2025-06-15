@@ -23,22 +23,74 @@ This project simulates masonry wall construction for robotic manipulators using 
 
 ### Prerequisites
 
-- Python 3.11
+- Python 3.11 or higher
 - Git
+- Tcl/Tk: Tkinter is required for visualization.
 
 ### Installation
 
 ```bash
 git clone https://github.com/Arina100808/MasonryWallSimulator
 cd MasonryWallSimulator
+```
+
+Create a virtual environment if needed and ensure all dependencies are installed.
+
+- On macOS/Linux:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+- On Windows:
+```bash
+python3 -m venv venv
+venv\Scripts\activate
+```
+
+Install the required packages:
+
+```bash
 pip install -r requirements.txt
 ```
+
+### Special Note: Tkinter Installation
+Tkinter is used for visualization.
+
+Check whether Tkinter is working:
+```bash
+python3 -m tkinter
+```
+
+You should see a small Tkinter window appear. If it works, you can proceed to the _Running the Simulator_ step.
+
+If you encounter an error like `ModuleNotFoundError: No module named 'tkinter'`, install Tkinter manually:
+- On Linux (Debian/Ubuntu):
+  ```bash
+  sudo apt-get install python3-tk
+  ```
+- On macOS:
+  ```bash
+  brew install python-tk
+  ```
+
+Finally, verify Tkinter is working:
+```bash
+python3 -m tkinter
+```
+
+You should see a small Tkinter window appear.
+
+If the issue persists for macOS, try [this](https://rinblog.org/en/python-tkinter-module-not-found-mac-en/).
 
 ### Running the Simulator
 
 ```bash
-python builder.py --stride-width 800 --stride-height 1300 --bond stretcher 
+python3 builder.py --stride-width 800 --stride-height 1300 --bond stretcher 
 ```
+
+Note: if the visualization window is cut off on your screen, decrease the `--scale` parameter.
+
 During simulation, press `Enter` to place the next brick. To build the entire wall, keep pressing `Enter` until completion.
 
 ### Available Command-Line Arguments
@@ -48,7 +100,7 @@ During simulation, press `Enter` to place the next brick. To build the entire wa
 | --bond            | str    | stretcher | Type of bond pattern                    | stretcher, english, wild                                           |
 | --stride-width    | float  | None      | Stride width in mm for optimized build  | Any positive float                                                 |
 | --stride-height   | float  | None      | Stride height in mm for optimized build | Any positive float                                                 |
-| --scale           | float  | 0.4       | Visualization scale factor              | Any positive float                                                 |
+| --scale           | float  | 0.3       | Visualization scale factor              | Any positive float                                                 |
 | --width           | float  | 2300.0    | Wall width in mm                        | Positive float* >= `brick_length + head_joint + half_brick_length` |
 | --height          | float  | 2000.0    | Wall height in mm                       | Positive float* >= `brick_height + bed_joint`                      |
 | --brick-length    | float  | 210.0     | Brick length in mm                      | Any positive float                                                 |

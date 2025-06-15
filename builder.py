@@ -24,7 +24,7 @@ def parse_arguments():
     parser.add_argument('--stride-height', type=float, default=None, help='Stride height for optimized build')
 
     # Visualization & debugging
-    parser.add_argument('--scale', type=float, default=0.4, help='Visualization scale factor (default: 0.3)')
+    parser.add_argument('--scale', type=float, default=0.3, help='Visualization scale factor (default: 0.3)')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
 
     return parser.parse_args()
