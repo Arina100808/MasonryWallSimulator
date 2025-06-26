@@ -208,7 +208,6 @@ The largest shape possible is a triangle ⇒ the goal is to maximize the number 
 - Optimize data storage using dictionaries or spatial indices.
 - Enhance the row generation algorithm for wild bond patterns to better resolve conflicts arising from multiple consecutive brick placement restrictions.
 - Explore _reinforcement learning_ approaches for generating optimal build sequences.
-q
 ---
 
 ## Algorithm Visualization
